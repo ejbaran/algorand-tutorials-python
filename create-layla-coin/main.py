@@ -1,10 +1,10 @@
 #/usr/bin/python3
-from config import *
+from liz import *
 from algosdk import algod
 from algosdk import account, mnemonic
 from algosdk.transaction import write_to_file
 from algosdk.transaction import AssetConfigTxn, AssetTransferTxn
-from util import add_network_params, sign_and_send, asset_units_formatted
+from util import add_network_params, sign_and_send, balance_formatter
 
 
 client = algod.AlgodClient(algod_token, algod_address)
@@ -61,7 +61,7 @@ def transfer(passphrase=None):
 	txn = AssetTransferTxn(**data)
 	if passphrase:
 		txinfo = sign_and_send(txn, passphrase, client)
-		formatted_amount = asset_units_formatted(amount, asset_id, client)
+		formatted_amount = balance_formatter(amount, asset_id, client)
 		print("Transferred {} from {} to {}".format(formatted_amount, 
 			creator_address, receiver_address))
 		print("Transaction ID Confirmation: {}".format(txinfo.get("tx")))
@@ -81,6 +81,6 @@ def check_holdings(asset_id, address):
 			print("Account {} must opt-in to Asset ID {}.".format(address, asset_id))
 		else:
 			amount = asset_holding.get("amount")
-			print("Account {} has {}.".format(address, asset_units_formatted(amount, asset_id, client)))
+			print("Account {} has {}.".format(address, balance_formatter(amount, asset_id, client)))
 	else:
 		print("Account {} must opt-in to Asset ID {}.".format(address, asset_id))

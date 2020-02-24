@@ -64,19 +64,13 @@ def sign_and_send(txn, passphrase, client):
 	txinfo = wait_for_confirmation(client, txid)
 	return txinfo
 
-def asset_units_formatted(amount, asset_id, client):
+def balance_formatter(amount, asset_id, client):
 	"""
 	Returns the formatted units for a given asset and amount. 
 	"""
 	asset_info = client.asset_info(asset_id)
 	decimals = asset_info.get("decimals")
 	unit = asset_info.get("unitname")
-	amount_str = str(amount)
-	if decimals == 0:
-		formatted_amount = str(amount)
-	else:
-		if len(amount_str) <= decimals:
-			amount_str = "0"*(decimals-len(amount_str)) + amount_str
-		formatted_amount = amount_str[:-decimals] + "." + amount_str[-decimals:]
+	formatted_amount = amount/10**decimals
 	return "{} {}".format(formatted_amount, unit)
 	
