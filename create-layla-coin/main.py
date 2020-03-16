@@ -50,7 +50,7 @@ def transfer(passphrase=None):
 	Creates an unsigned transfer transaction for the specified asset id, to the 
 	specified address, for the specified amount.
 	"""
-	amount = 1
+	amount = 6000
 	transfer_data = {
 		"sender": creator_address,
 		"receiver": receiver_address,

@@ -12,10 +12,10 @@ algod_token = ""
 # Details of the asset creation transaction
 asset_details = {
 	"sender": creator_address,
-	"asset_name": "LaylaGyozaCoin",
+	"asset_name": "DogCoin",
 	"unit_name": "Woof",
 	"total": 888888888,
-	"decimals": 3,
+	"decimals": 2,
 	"default_frozen": False,
 	"manager": creator_address,
 	"reserve": creator_address,
@@ -29,4 +29,4 @@ metadata_file = "LaylaGyoza.jpg"
 metadatahash_b64 = "T4j98tH+7pYr+fC2so0Ntc5kKSObVs6kgaa5vQ73YWw="
 
 # The asset ID is available after the asset is created.
-asset_id = 191674
+asset_id = 0 # change this
