@@ -1,5 +1,5 @@
 #/usr/bin/python3
-from liz import *
+from config import *
 from algosdk import algod
 from algosdk import account, mnemonic
 from algosdk.transaction import write_to_file

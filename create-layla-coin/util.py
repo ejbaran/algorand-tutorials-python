@@ -16,17 +16,18 @@ def wait_for_confirmation(client, txid):
 	Utility to function to wait until the transaction is
 	confirmed before proceeding.
 
-	@txid: C{string} - The transaction id of the asset 
+	@txid: C{string} - The transaction id of the asset
 	"""
+	last_round = client.status().get('lastRound')
 	while True:
 		txinfo = client.pending_transaction_info(txid)
 		if txinfo.get('round') and txinfo.get('round') > 0:
 			print("Transaction {} confirmed in round {}.".format(txid, txinfo.get('round')))
 			return txinfo
-			break
 		else:
 			print("Waiting for confirmation...")
-			client.status_after_block(client.status().get('lastRound') +1)
+			last_round += 1
+			client.status_after_block(last_round)
 
 def hash_file_data(filename, return_type="bytes"):
 	"""
