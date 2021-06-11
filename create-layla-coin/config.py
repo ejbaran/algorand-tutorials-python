@@ -6,12 +6,11 @@ receiver_address = ""
 receiver_passphrase = ""
 
 # Credentials to connect through an algod client
-algod_address = ""
-algod_token = ""
+algod_address = "http://localhost:4001"
+algod_token = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 # Details of the asset creation transaction
 asset_details = {
-	"sender": creator_address,
 	"asset_name": "DogCoin",
 	"unit_name": "Woof",
 	"total": 888888888,
