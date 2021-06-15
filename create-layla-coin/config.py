@@ -11,7 +11,7 @@ algod_token = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 # Details of the asset creation transaction
 asset_details = {
-	"asset_name": "DogCoin",
+	"asset_name": "LaylaCoin",
 	"unit_name": "Woof",
 	"total": 888888888,
 	"decimals": 2,
