@@ -36,22 +36,7 @@ def optin(passphrase=None):
 	else:
 		write_to_file([txns], "optin.txn")
 
-# Creates an unsigned transfer transaction for the specified asset id, to the specified address, for the specified amount.
-#def transfer(passphrase=None):
-	#amount = 6000
-	#params = client.suggested_params()
-	#txn = AssetTransferTxn(sender=creator_address, sp=params, receiver=receiver_address, amt=amount, index=asset_id)
-	#if passphrase:
-		#txinfo = sign_and_send(txn, passphrase, client)
-		#formatted_amount = balance_formatter(amount, asset_id, client)
-		#print("Transferred {} from {} to {}".format(formatted_amount, 
-			#creator_address, receiver_address))
-		#print("Transaction ID Confirmation: {}".format(txinfo.get("tx")))
-	#else:
-		#write_to_file([txns], "transfer.txn")
-
 def transfer(passphrase=None):
-
     amount = 6000
     params = client.suggested_params()
     txn = AssetTransferTxn(sender=creator_address, sp=params, receiver=receiver_address, amt=amount, index=asset_id)
