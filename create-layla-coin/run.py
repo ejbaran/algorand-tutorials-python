@@ -44,3 +44,6 @@ transfer(creator_passphrase)
 # Confirm
 from config import creator_address, receiver_address
 from main import check_holdings
+
+check_holdings(asset_id, creator_address)
+check_holdings(asset_id, receiver_address)
