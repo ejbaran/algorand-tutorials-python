@@ -43,7 +43,7 @@ def wait_for_confirmation(client, transaction_id, timeout):
 
 def hash_file_data(filename, return_type="bytes"):
 	"""
-	Takes any byte data and returns the SHA512/256 hash in base64.
+	Takes any byte data and returns the SHA256 hash in base64.
 	"""
 	filebytes = open(filename, 'rb').read()
 	h = hashlib.sha256()
